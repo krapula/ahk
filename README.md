@@ -1,4 +1,1 @@
-ahk
-===
-
-Authotkey scripts
+For storing ahk scripts.
