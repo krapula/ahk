@@ -16,3 +16,5 @@ CapsLock::Enter
 RCtrl & l::Send, {Media_Play_Pause}
 RCtrl & j::Send, {Media_Next}
 RCtrl & k::Send, {Media_Prev}
+
+::,.::[ ] 
