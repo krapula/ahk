@@ -23,29 +23,29 @@ SendMode Input 	; Recommended for new scripts due to its superior speed and reli
 ;	See http://www.autohotkey.com/docs/commands/Hotkey.htm
 
 ; 					sv-SE	us-EN
-Hotkey, SC011 , MyUp, Off			;w	w
-Hotkey, SC01E , MyLt, Off			;a	a
-Hotkey, SC01F , MyDn, Off			;s	s
-Hotkey, SC020 , MyRg, Off			;d	d
-Hotkey, SC015 , MyCalc, Off			;y	y
+Hotkey, SC011 , MyUp, Off		;w	w
+Hotkey, SC01E , MyLt, Off		;a	a
+Hotkey, SC01F , MyDn, Off		;s	s
+Hotkey, SC020 , MyRg, Off		;d	d
+Hotkey, SC015 , MyCalc, Off		;y	y
 Hotkey, SC017 , MyInsert, Off		;i	i
 Hotkey, SC019 , MyPrntScrn, Off		;p	p
-Hotkey, SC028 , MyPgUp, Off			;ä	'
-Hotkey, SC027 , MyHome, Off			;ö	;
-Hotkey, SC035 , MyPgDn, Off			;-	/
-Hotkey, SC034 , MyEnd, Off			;.	.
-Hotkey, SC002 , MyF1, Off			;1	1
-Hotkey, SC003 , MyF2, Off			;2	2
-Hotkey, SC004 , MyF3, Off			;3	3
-Hotkey, SC005 , MyF4, Off			;4	4
-Hotkey, SC006 , MyF5, Off			;5	5
-Hotkey, SC007 , MyF6, Off			;6	6
-Hotkey, SC008 , MyF7, Off			;7	7
-Hotkey, SC009 , MyF8, Off			;8	8
-Hotkey, SC00A , MyF9, Off			;9	9
-Hotkey, SC00B , MyF10, Off			;0	0
-Hotkey, SC00C , MyF11, Off			;+	-
-Hotkey, SC00D , MyF12, Off			;´	=
+Hotkey, SC028 , MyPgUp, Off		;ä	'
+Hotkey, SC027 , MyHome, Off		;ö	;
+Hotkey, SC035 , MyPgDn, Off		;-	/
+Hotkey, SC034 , MyEnd, Off		;.	.
+Hotkey, SC002 , MyF1, Off		;1	1
+Hotkey, SC003 , MyF2, Off		;2	2
+Hotkey, SC004 , MyF3, Off		;3	3
+Hotkey, SC005 , MyF4, Off		;4	4
+Hotkey, SC006 , MyF5, Off		;5	5
+Hotkey, SC007 , MyF6, Off		;6	6
+Hotkey, SC008 , MyF7, Off		;7	7
+Hotkey, SC009 , MyF8, Off		;8	8
+Hotkey, SC00A , MyF9, Off		;9	9
+Hotkey, SC00B , MyF10, Off		;0	0
+Hotkey, SC00C , MyF11, Off		;+	-
+Hotkey, SC00D , MyF12, Off		;´	=
 Return
 
 ;	Toggle settings
