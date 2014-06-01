@@ -2,11 +2,16 @@
 ;	the Poker II is not an option, like your laptop or when travelling.
 ;
 ;	- The Poker II programmability is excluded from scope.
-;	- Uses scancodes to enable different languages/layouts being used.
+;	- Uses scancodes of keys to enable different languages/layouts being used.
+;	  See http://www.autohotkey.com/docs/misc/Remap.htm
 ;	- Tested on Windows 7 Professional.
 ;	- Verified for sv-SE & us-EN.
-;	- Many thanks to stackoverflow on how to do toggling
-;	  https://stackoverflow.com/questions/16315817/autohotkey-toggle-a-set-of-keybinds-on-and-off
+;	- Toggling of Fn-layer (RCtrl + Space).
+;	- Two different Fn-keys due to non-standard keyboard omission of RWin or AppsKey.
+;	
+;	Thanks to stackoverflow on how to do toggling
+;	https://stackoverflow.com/questions/16315817/autohotkey-toggle-a-set-of-keybinds-on-and-off
+
 
 #NoEnv		; Recommended for performance and compatibility with future AutoHotkey releases.
 SendMode Input 	; Recommended for new scripts due to its superior speed and reliability.
@@ -18,61 +23,60 @@ SendMode Input 	; Recommended for new scripts due to its superior speed and reli
 ;	See http://www.autohotkey.com/docs/commands/Hotkey.htm
 
 ; 					sv-SE	us-EN
-Hotkey, w , MyUp, Off			;w	w
-Hotkey, a , MyLt, Off			;a	a
-Hotkey, s , MyDn, Off			;s	s
-Hotkey, d , MyRg, Off			;d	d
-Hotkey, y , MyCalc, Off			;y	y
-Hotkey, i , MyInsert, Off		;i	i
-Hotkey, p , MyPrntScrn, Off		;p	p
-Hotkey, ä , MyPgUp, Off			;ä	'
-Hotkey, ö , MyHome, Off			;ö	;
-Hotkey, - , MyPgDn, Off			;-	/
-Hotkey, . , MyEnd, Off			;.	.
-Hotkey, 1 , MyF1, Off			;1	1
-Hotkey, 2 , MyF2, Off			;2	2
-Hotkey, 3 , MyF3, Off			;3	3
-Hotkey, 4 , MyF4, Off			;4	4
-Hotkey, 5 , MyF5, Off			;5	5
-Hotkey, 6 , MyF6, Off			;6	6
-Hotkey, 7 , MyF7, Off			;7	7
-Hotkey, 8 , MyF8, Off			;8	8
-Hotkey, 9 , MyF9, Off			;9	9
-Hotkey, 0 , MyF10, Off			;0	0
-Hotkey, + , MyF11, Off			;+	-
-Hotkey, ´ , MyF12, Off			;´	=
+Hotkey, SC011 , MyUp, Off			;w	w
+Hotkey, SC01E , MyLt, Off			;a	a
+Hotkey, SC01F , MyDn, Off			;s	s
+Hotkey, SC020 , MyRg, Off			;d	d
+Hotkey, SC015 , MyCalc, Off			;y	y
+Hotkey, SC017 , MyInsert, Off		;i	i
+Hotkey, SC019 , MyPrntScrn, Off		;p	p
+Hotkey, SC028 , MyPgUp, Off			;ä	'
+Hotkey, SC027 , MyHome, Off			;ö	;
+Hotkey, SC035 , MyPgDn, Off			;-	/
+Hotkey, SC034 , MyEnd, Off			;.	.
+Hotkey, SC002 , MyF1, Off			;1	1
+Hotkey, SC003 , MyF2, Off			;2	2
+Hotkey, SC004 , MyF3, Off			;3	3
+Hotkey, SC005 , MyF4, Off			;4	4
+Hotkey, SC006 , MyF5, Off			;5	5
+Hotkey, SC007 , MyF6, Off			;6	6
+Hotkey, SC008 , MyF7, Off			;7	7
+Hotkey, SC009 , MyF8, Off			;8	8
+Hotkey, SC00A , MyF9, Off			;9	9
+Hotkey, SC00B , MyF10, Off			;0	0
+Hotkey, SC00C , MyF11, Off			;+	-
+Hotkey, SC00D , MyF12, Off			;´	=
 Return
 
 ;	Toggle settings
 ;	===============
 ;	Add/Remove/uncomment specific keys or the whole section based on you desire to
 ;	toggle a Fn-layer for one-handed use.
-RWin & Space::
+RCtrl & Space::
 KeyToggle:=!KeyToggle
-Hotkey, w , % (KeyToggle ? "On": "Off")
-Hotkey, a , % (KeyToggle ? "On": "Off")
-Hotkey, s , % (KeyToggle ? "On": "Off")
-Hotkey, d , % (KeyToggle ? "On": "Off")
-Hotkey, y , % (KeyToggle ? "On": "Off")
-Hotkey, i , % (KeyToggle ? "On": "Off")
-Hotkey, p , % (KeyToggle ? "On": "Off")
-Hotkey, ä , % (KeyToggle ? "On": "Off")
-Hotkey, ö , % (KeyToggle ? "On": "Off")
-Hotkey, - , % (KeyToggle ? "On": "Off")
-Hotkey, . , % (KeyToggle ? "On": "Off")
-Hotkey, 1 , % (KeyToggle ? "On": "Off")
-Hotkey, 1 , % (KeyToggle ? "On": "Off")
-Hotkey, 2 , % (KeyToggle ? "On": "Off")
-Hotkey, 3 , % (KeyToggle ? "On": "Off")
-Hotkey, 4 , % (KeyToggle ? "On": "Off")
-Hotkey, 5 , % (KeyToggle ? "On": "Off")
-Hotkey, 6 , % (KeyToggle ? "On": "Off")
-Hotkey, 7 , % (KeyToggle ? "On": "Off")
-Hotkey, 8 , % (KeyToggle ? "On": "Off")
-Hotkey, 9 , % (KeyToggle ? "On": "Off")
-Hotkey, 0 , % (KeyToggle ? "On": "Off")
-Hotkey, + , % (KeyToggle ? "On": "Off")
-Hotkey, ´ , % (KeyToggle ? "On": "Off")
+Hotkey, SC011 , % (KeyToggle ? "On": "Off")
+Hotkey, SC01E , % (KeyToggle ? "On": "Off")
+Hotkey, SC01F , % (KeyToggle ? "On": "Off")
+Hotkey, SC020 , % (KeyToggle ? "On": "Off")
+Hotkey, SC015 , % (KeyToggle ? "On": "Off")
+Hotkey, SC017 , % (KeyToggle ? "On": "Off")
+Hotkey, SC019 , % (KeyToggle ? "On": "Off")
+Hotkey, SC028 , % (KeyToggle ? "On": "Off")
+Hotkey, SC027 , % (KeyToggle ? "On": "Off")
+Hotkey, SC035 , % (KeyToggle ? "On": "Off")
+Hotkey, SC034 , % (KeyToggle ? "On": "Off")
+Hotkey, SC002 , % (KeyToggle ? "On": "Off")
+Hotkey, SC003 , % (KeyToggle ? "On": "Off")
+Hotkey, SC004 , % (KeyToggle ? "On": "Off")
+Hotkey, SC005 , % (KeyToggle ? "On": "Off")
+Hotkey, SC006 , % (KeyToggle ? "On": "Off")
+Hotkey, SC007 , % (KeyToggle ? "On": "Off")
+Hotkey, SC008 , % (KeyToggle ? "On": "Off")
+Hotkey, SC009 , % (KeyToggle ? "On": "Off")
+Hotkey, SC00A , % (KeyToggle ? "On": "Off")
+Hotkey, SC00B , % (KeyToggle ? "On": "Off")
+Hotkey, SC00C , % (KeyToggle ? "On": "Off")
+Hotkey, SC00D , % (KeyToggle ? "On": "Off")
 Return
 
 ;	Bind keys to actions
@@ -83,7 +87,7 @@ Return
 ;	  to remove either RWin or AppsKey and I encounter both.
 
 §::Esc
-								
+
 ;	   Scancode				;sv-SE	us-EN
 RWin & SC029::Send, {Blind}§			;§	`
 RWin & SC203::Send, {Media_Prev}		;h	h
