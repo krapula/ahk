@@ -5,7 +5,7 @@
 ;	- Uses scancodes of keys to enable different languages/layouts being used.
 ;	  See http://www.autohotkey.com/docs/misc/Remap.htm
 ;	- Tested on Windows 7 Professional.
-;	- Verified for sv-SE & us-EN.
+;	- Verified for se-SV & us-EN.
 ;	- Toggling of Fn-layer (RCtrl + Space).
 ;	- Two different Fn-keys due to non-standard keyboard omission of RWin or AppsKey.
 ;	
@@ -22,18 +22,21 @@ SendMode Input 	; Recommended for new scripts due to its superior speed and reli
 ;	Normal Remappings don't require hotkeys but having a MyLabel helps following the functions.
 ;	See http://www.autohotkey.com/docs/commands/Hotkey.htm
 
-; 					sv-SE	us-EN
+; 					se-SV	us-EN
 Hotkey, SC011 , MyUp, Off		;w	w
 Hotkey, SC01E , MyLt, Off		;a	a
 Hotkey, SC01F , MyDn, Off		;s	s
 Hotkey, SC020 , MyRg, Off		;d	d
+
+Hotkey, SC027 , MyHome, Off		;ö	;
+Hotkey, SC034 , MyEnd, Off		;.	.
+Hotkey, SC028 , MyPgUp, Off		;ä	'
+Hotkey, SC035 , MyPgDn, Off		;-	/
+
 Hotkey, SC015 , MyCalc, Off		;y	y
 Hotkey, SC017 , MyInsert, Off		;i	i
 Hotkey, SC019 , MyPrntScrn, Off		;p	p
-Hotkey, SC028 , MyPgUp, Off		;ä	'
-Hotkey, SC027 , MyHome, Off		;ö	;
-Hotkey, SC035 , MyPgDn, Off		;-	/
-Hotkey, SC034 , MyEnd, Off		;.	.
+
 Hotkey, SC002 , MyF1, Off		;1	1
 Hotkey, SC003 , MyF2, Off		;2	2
 Hotkey, SC004 , MyF3, Off		;3	3
@@ -88,29 +91,26 @@ Return
 
 §::Esc
 
-;	   Scancode				;sv-SE	us-EN
 RWin & SC029::Send, {Blind}§			;§	`
-RWin & SC203::Send, {Media_Prev}		;h	h
-RWin & SC024::Send, {Media_Next}		;j	j
-RWin & SC025::Send, {Media_Play_Pause}		;k	k
-RWin & SC031::Send, {Volume_Down}		;n	m
-RWin & SC032::Send, {Volume_Up}			;m	,
-RWin & SC033::Send, {Volume_Mute}		;,	.
+
+RWin & SC011::Goto, MyUp			;w	w
+RWin & SC01E::Goto, MyLt			;a	a
+RWin & SC01F::Goto, MyDn			;s	s
+RWin & SC020::Goto, MyRg			;d	d
+
+RWin & SC027::Goto, MyHome			;ö	;
+RWin & SC034::Goto, MyEnd			;.	.
+RWin & SC028::Goto, MyPgUp			;ä	'
+RWin & SC035::Goto, MyPgDn			;-	/
+
 RWin & SC00E::Send, {Blind}{Delete}		;BS	BS
 RWin & SC02D::Send, {Blind}{AppsKey}		:x	x
 RWin & SC01A::Send, {Blind}{ScrollLock}		;å	[
 RWin & SC01B::Goto, MyPause			;¨	]
 RWin & SC019::Send, MyPrntScrn			;p	p
-RWin & SC011::Goto, MyUp			;w	w
-RWin & SC01E::Goto, MyLt			;a	a
-RWin & SC01F::Goto, MyDn			;s	s
-RWin & SC020::Goto, MyRg			;d	d
 RWin & SC015::Goto, MyCalc			;y	y
 RWin & SC017::Goto, MyInsert			;i	i
-RWin & SC027::Goto, MyHome			;ö	;
-RWin & SC028::Goto, MyPgUp			;ä	'
-RWin & SC034::Goto, MyEnd			;.	.
-RWin & SC035::Goto, MyPgDn			;-	/
+
 RWin & SC002::Goto, MyF1			;1	1
 RWin & SC003::Goto, MyF2			;2	2
 RWin & SC004::Goto, MyF3			;3	3
@@ -124,29 +124,33 @@ RWin & SC00B::Goto, MyF10			;0	0
 RWin & SC00C::Goto, MyF11			;+	-
 RWin & SC00D::Goto, MyF12			;´	=
 
-;		  Scancode			;sv-SE	us-EN
+RWin & SC203::Send, {Media_Prev}		;h	h
+RWin & SC024::Send, {Media_Next}		;j	j
+RWin & SC025::Send, {Media_Play_Pause}		;k	k
+RWin & SC031::Send, {Volume_Down}		;n	m
+RWin & SC032::Send, {Volume_Up}			;m	,
+RWin & SC033::Send, {Volume_Mute}		;,	.
+
 AppsKey & SC029::Send, {Blind}§			;§	`
-AppsKey & SC203::Send, {Media_Prev}		;h	h
-AppsKey & SC024::Send, {Media_Next}		;j	j
-AppsKey & SC025::Send, {Media_Play_Pause}	;k	k
-AppsKey & SC031::Send, {Volume_Down}		;n	m
-AppsKey & SC032::Send, {Volume_Up}		;m	,
-AppsKey & SC033::Send, {Volume_Mute}		;,	.
-AppsKey & SC00E::Send, {Blind}{Delete}		;BS	BS
-AppsKey & SC02D::Send, {Blind}{AppsKey}		;x	x
-AppsKey & SC01A::Send, {Blind}{ScrollLock}	;å	[
-AppsKey & SC019::Send, MyPrntScrn		;¨	]
-AppsKey & SC01B::Goto, MyPause			;p	p
+
 AppsKey & SC011::Goto, MyUp			;w	w
 AppsKey & SC01E::Goto, MyLt			;a	a
 AppsKey & SC01F::Goto, MyDn			;s	s
 AppsKey & SC020::Goto, MyRg			;d	d
+
+AppsKey & SC027::Goto, MyHome			;ö	;
+AppsKey & SC034::Goto, MyEnd			;.	.
+AppsKey & SC028::Goto, MyPgUp			;ä	'
+AppsKey & SC035::Goto, MyPgDn			;-	/
+
+AppsKey & SC00E::Send, {Blind}{Delete}		;BS	BS
+AppsKey & SC02D::Send, {Blind}{AppsKey}		;x	x
+AppsKey & SC01A::Send, {Blind}{ScrollLock}	;å	[
+AppsKey & SC01B::Goto, MyPause			;p	p
+AppsKey & SC019::Send, MyPrntScrn		;¨	]
 AppsKey & SC015::Goto, MyCalc			;y	y
 AppsKey & SC017::Goto, MyInsert			;i	i
-AppsKey & SC027::Goto, MyHome			;ö	;
-AppsKey & SC028::Goto, MyPgUp			;ä	'
-AppsKey & SC034::Goto, MyEnd			;.	.
-AppsKey & SC035::Goto, MyPgDn			;-	/
+
 AppsKey & SC002::Goto, MyF1			;1	1
 AppsKey & SC003::Goto, MyF2			;2	2
 AppsKey & SC004::Goto, MyF3			;3	3
@@ -159,6 +163,13 @@ AppsKey & SC00A::Goto, MyF9			;9	9
 AppsKey & SC00B::Goto, MyF10			;0	0
 AppsKey & SC00C::Goto, MyF11			;+	-
 AppsKey & SC00D::Goto, MyF12			;´	=
+
+AppsKey & SC203::Send, {Media_Prev}		;h	h
+AppsKey & SC024::Send, {Media_Next}		;j	j
+AppsKey & SC025::Send, {Media_Play_Pause}	;k	k
+AppsKey & SC031::Send, {Volume_Down}		;n	m
+AppsKey & SC032::Send, {Volume_Up}		;m	,
+AppsKey & SC033::Send, {Volume_Mute}		;,	.
 
 ;	Labels and actions
 ;	==================
@@ -178,36 +189,36 @@ MyRg:
 Send, {Blind}{Right}
 Return
 
-MyCalc:
-Run, calc.exe
-Return
-
-MyPause:
-Send, {Blind}{Pause}
-Return
-
-MyInsert:
-Send, {Blind}{Insert}
-Return
-
-MyPgDn:
-Send, {Blind}{PgDn}
-Return
-
-MyPgUp:
-Send, {Blind}{PgUp}
+MyHome:
+Send, {Blind}{Home}
 Return
 
 MyEnd:
 Send, {Blind}{End}
 Return
 
-MyHome:
-Send, {Blind}{Home}
+MyPgUp:
+Send, {Blind}{PgUp}
+Return
+
+MyPgDn:
+Send, {Blind}{PgDn}
+Return
+
+MyPause:
+Send, {Blind}{Pause}
 Return
 
 MyPrntScrn:
 Send, {Blind}{PrintScreen}
+Return
+
+MyCalc:
+Run, calc.exe
+Return
+
+MyInsert:
+Send, {Blind}{Insert}
 Return
 
 MyF1:
