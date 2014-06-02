@@ -7,9 +7,9 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 +CapsLock::CapsLock
 CapsLock::Enter
 
-RCtrl & l::Send, {Media_Play_Pause}
-RCtrl & j::Send, {Media_Next}
-RCtrl & k::Send, {Media_Prev}
+RCtrl & SC01A::Send, {Media_Prev}	; å	[
+RCtrl & SC01B::Send, {Media_Next}	; ¨	]
+RCtrl & SC02B::Send, {Media_Play_Pause}	; '	\
 
 ;	Replacements
 ;	============
