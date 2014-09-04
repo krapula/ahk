@@ -16,16 +16,29 @@ return
 
 ;	Remaps
 ;	======
-+CapsLock::CapsLock
-CapsLock::Enter
+Capslock::Enter
++Capslock::Capslock
+Ctrl & SC01A::Send, {Media_Prev}	; å [
+Ctrl & SC01B::Send, {Media_Next}	; ¨ ]
+Ctrl & SC02B::Send, {Media_Play_Pause}	; ' \
+Ctrl & n::Send, {Volume_Down}
+Ctrl & m::Send, {Volume_Up}
+RWin & SC01A::Send, {Media_Prev}	; å [
+RWin & SC01B::Send, {Media_Next}	; ¨ ]
+RWin & SC02B::Send, {Media_Play_Pause}	; ' \
+RWin & n::Send, {Volume_Down}
+RWin & m::Send, {Volume_Up}
 
-RCtrl & SC01A::Send, {Media_Prev}	; å	[
-RCtrl & SC01B::Send, {Media_Next}	; ¨	]
-RCtrl & SC02B::Send, {Media_Play_Pause}	; '	\
+;	Shortcuts
+;	=========
+#w::Run, winword.exe
+#x::Run, excel.exe
+#p::Run, powerpnt.exe
+#Enter::Run, cmd.exe
 
 ;	Replacements
 ;	============
-::,.::[ ] 
+::,.::[ ]
 
 ; WINDOWS KEY + H TOGGLES HIDDEN FILES
 ; ====================================
