@@ -3,6 +3,17 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 #SingleInstance force
 
+;	# Window specific actions
+;	=======================
+#IfWinActive ahk_class CabinetWClass ;	open current folder in command prompt
++!d::
+Send !d
+Sleep 10
+Send cmd{Enter}
+return
+
+#IfWinActive ;end window specific actions
+
 ;	Remaps
 ;	======
 +CapsLock::CapsLock
