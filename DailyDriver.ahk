@@ -1,4 +1,6 @@
-; Used and tested on Win7
+/*  The key bits that are used in scripts for work and home.
+ *  Used and tested on Win7.
+ */
 #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 #SingleInstance force
