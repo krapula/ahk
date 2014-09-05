@@ -70,7 +70,6 @@ return
 		Send, {Blind}r
 	}
 return
-;ClassNN:	SUPERGRID2
 *f::	; Sort view by From
 	if(olNavMode && focused="SUPERGRID2"){
 		Send, {Alt}vabf
