@@ -14,7 +14,6 @@ n::
 	ControlGetFocus, focused
 	if(olNavMode=0 && focused="SUPERGRID2"){
 		olNavMode:=!olNavMode
-		;MsgBox, olNavMode on %olNavMode%
 	}
 	else {
 		Send, {Blind}n
@@ -23,7 +22,6 @@ return
 SC001:: ; 'ESC'
 	if(olNavMode=1 && focused="SUPERGRID2"){
 		olNavMode:=!olNavMode
-		;MsgBox, olNavMode off %olNavMode%
 	}
 	else {
 		Send, {Blind}{Esc}
