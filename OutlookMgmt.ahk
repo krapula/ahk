@@ -11,7 +11,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 #ifwinactive, ahk_exe outlook.exe
 olNavMode:=false
 n::
-	if(olNavMode=0){
+	if(olNavMode=0 && focused="SUPERGRID2"){
 		ControlGetFocus, focused
 		olNavMode:=!olNavMode
 		;MsgBox, olNavMode on %olNavMode%
@@ -21,7 +21,7 @@ n::
 	}
 return
 SC001:: ; 'ESC'
-	if(olNavMode=1){
+	if(olNavMode=1 && focused="SUPERGRID2"){
 		olNavMode:=!olNavMode
 		;MsgBox, olNavMode off %olNavMode%
 	}
