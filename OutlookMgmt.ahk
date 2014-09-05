@@ -16,11 +16,17 @@ n::
 		olNavMode:=!olNavMode
 		;MsgBox, olNavMode on %olNavMode%
 	}
+	else {
+		Send, {Blind}n
+	}
 return
 SC001:: ; 'ESC'
 	if(olNavMode=1){
 		olNavMode:=!olNavMode
 		;MsgBox, olNavMode off %olNavMode%
+	}
+	else {
+		Send, {Blind}{Esc}
 	}
 return
 
@@ -94,6 +100,6 @@ return
 		Send, {Alt}vabl
 	}
 	else {
-		Send, {Blind}d
+		Send, {Blind}a
 	}
 return
