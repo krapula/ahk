@@ -68,6 +68,16 @@ return
 		Send, {Blind}r
 	}
 return
+*q:: ; Mark as read
+	if(olNavMode && focused="SUPERGRID2"){
+		Send, ^q
+	}
+	else {
+		Send, {Blind}q
+	}
+return
+
+; SORT VIEW
 *f::	; Sort view by From
 	if(olNavMode && focused="SUPERGRID2"){
 		Send, {Alt}vabf
