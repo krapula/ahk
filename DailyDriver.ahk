@@ -18,8 +18,13 @@ return
 
 ;	Remaps
 ;	======
++Capslock:: ; Because +Capslock::Capslock is not reliable.
+	If GetKeyState("CapsLock", "T") = 1
+		SetCapsLockState, AlwaysOff
+	Else
+		SetCapsLockState, AlwaysOn
+Return
 Capslock::Enter
-+Capslock::Capslock
 Ctrl & SC01A::Send, {Media_Prev}	; å [
 Ctrl & SC01B::Send, {Media_Next}	; ¨ ]
 Ctrl & SC02B::Send, {Media_Play_Pause}	; ' \
