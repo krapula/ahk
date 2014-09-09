@@ -8,6 +8,8 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 #SingleInstance force
 
+; Toggle navigation mode
+; ======================
 #ifwinactive, ahk_exe outlook.exe
 olNavMode:=false
 n::
@@ -28,6 +30,8 @@ SC001:: ; 'ESC'
 	}
 return
 
+; Navigation
+; ==========
 *j:: ; Next item
 	if(olNavMode && focused="SUPERGRID2"){ 
 		Send, {Blind}{Down}
@@ -60,7 +64,18 @@ return
 		Send, {Blind}l
 	}
 return
-*r:: ; Refresh view to get rid of read items
+
+; Action
+; ======
+*i:: ; Refresh view
+	if(olNavMode && focused="SUPERGRID2"){
+		Send, {Blind}+Insert
+	}
+	else {
+		Send, {Blind}i
+	}
+return
+*r:: ; Refresh view
 	if(olNavMode && focused="SUPERGRID2"){
 		Send, {Blind}{F5}
 	}
@@ -68,7 +83,7 @@ return
 		Send, {Blind}r
 	}
 return
-*q:: ; Mark as read
+*q:: ; Mark selected item(s) as read
 	if(olNavMode && focused="SUPERGRID2"){
 		Send, ^q
 	}
@@ -78,6 +93,7 @@ return
 return
 
 ; SORT VIEW
+; =========
 *f::	; Sort view by From
 	if(olNavMode && focused="SUPERGRID2"){
 		Send, {Alt}vabf
@@ -108,5 +124,32 @@ return
 	}
 	else {
 		Send, {Blind}a
+	}
+return
+
+; Quick access toolbar
+; ====================
+*1::
+	if(olNavMode && focused="SUPERGRID2"){
+		Send, ^+1
+	}
+	else {
+		Send, {Blind}1
+	}
+return
+*2::
+	if(olNavMode && focused="SUPERGRID2"){
+		Send, ^+2
+	}
+	else {
+		Send, {Blind}2
+	}
+return
+*3::
+	if(olNavMode && focused="SUPERGRID2"){
+		Send, ^+3
+	}
+	else {
+		Send, {Blind}3
 	}
 return
